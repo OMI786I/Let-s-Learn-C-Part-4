@@ -54,3 +54,69 @@ string value1 = "5";
 string value2 = "7";
 int result3 = Convert.ToInt32(value1) * Convert.ToInt32(value2);
 Console.WriteLine(result3);
+
+
+
+// 6 Converst using "TryParse()" from string to numeric value
+
+
+string mystring8 = "102";
+
+int result8 = 0;
+
+if (int.TryParse(mystring8, out result8))
+{
+     Console.WriteLine($"Measurement: {result8}");
+}
+
+else
+{
+   Console.WriteLine("Unable to report the measurement.");
+}
+
+
+
+
+
+string myInput = "2.71828";
+//decimal myInputDecimal = (decimal)(myInput);
+
+decimal myInputDecimal = 0;
+
+if(decimal.TryParse(myInput, out myInputDecimal))
+{
+        Console.WriteLine(myInputDecimal);
+    
+}
+    
+
+
+
+//Exercise: Complete a challenge to combine string array values as strings and as integers
+    
+string[] values = ["12.3", "45", "ABC", "11", "DEF"]  ;
+
+// if string make it message if numeric then make total
+
+//Message: ABCDEF
+//Total: 68.3
+
+
+decimal sumResult = 0;
+string message2 = "";
+foreach (var item in values)
+{
+    decimal numericResult = 0;
+    if (decimal.TryParse(item, out numericResult))
+    {
+       
+        sumResult += numericResult;
+    }
+
+    else
+    {
+        message2 += item;
+    }
+}
+Console.WriteLine($"Message: {message2}");
+Console.WriteLine($"Total : {sumResult}");
