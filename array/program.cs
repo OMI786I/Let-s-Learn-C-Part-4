@@ -49,3 +49,32 @@ foreach (var pallet in pallets3)
 {
     Console.WriteLine($"-- {pallet}");
 }
+
+
+
+// reverse a string
+
+string value = "abc123";
+char[] valueArray = value.ToCharArray();
+Array.Reverse(valueArray);
+string result = new string(valueArray);
+Console.WriteLine(result);
+
+
+// join
+
+string value2 = "abc123";
+char[] valueArray2 = value2.ToCharArray();
+Array.Reverse(valueArray2);
+// string result = new string(valueArray);
+string result2 = String.Join(",", valueArray2);
+Console.WriteLine(result2);
+
+
+// split
+
+string[] items = result2.Split(',');
+foreach (string item in items)
+{
+    Console.WriteLine(item);
+}
