@@ -103,3 +103,26 @@ for (int i = 0; i < message.Length; i++)
 //Step 4
 string result5 = String.Join(" ", newMessage);
 Console.WriteLine(result5);
+
+
+
+//Review a solution to parse a string of orders, sort orders and tag possible errors
+
+string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+
+string[] items3 = orderStream.Split(',');
+
+Array.Sort(items3);
+
+foreach (var item in items3)
+{
+    if (item.Length == 4)
+    {
+        Console.WriteLine(item);
+    }
+
+    else
+    {
+        Console.WriteLine($"Error {item}");
+    }
+}
